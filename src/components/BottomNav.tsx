@@ -3,13 +3,13 @@ import { Mic, MessageSquare, Settings } from 'lucide-react'
 
 export default function BottomNav() {
   return (
-    <nav className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] bg-[#111] border-t border-white/8 flex items-center justify-around px-2 pb-safe">
+    <nav className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] bg-surface border-t border-border flex items-center justify-around px-2 pb-safe">
       <NavLink
         to="/"
         end
         className={({ isActive }) =>
           `flex flex-col items-center gap-1 py-3 px-6 text-xs transition-colors ${
-            isActive ? 'text-white' : 'text-white/40'
+            isActive ? 'text-accent' : 'text-tertiary'
           }`
         }
       >
@@ -21,7 +21,7 @@ export default function BottomNav() {
         to="/chat"
         className={({ isActive }) =>
           `flex flex-col items-center gap-1 py-3 px-6 text-xs transition-colors ${
-            isActive ? 'text-white' : 'text-white/40'
+            isActive ? 'text-accent' : 'text-tertiary'
           }`
         }
       >
@@ -33,7 +33,7 @@ export default function BottomNav() {
         to="/settings"
         className={({ isActive }) =>
           `flex flex-col items-center gap-1 py-3 px-6 text-xs transition-colors ${
-            isActive ? 'text-white' : 'text-white/40'
+            isActive ? 'text-accent' : 'text-tertiary'
           }`
         }
       >

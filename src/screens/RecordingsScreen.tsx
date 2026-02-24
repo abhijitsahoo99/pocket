@@ -27,16 +27,16 @@ export default function RecordingsScreen() {
     <div className="flex flex-col min-h-dvh pb-24">
       {/* Header */}
       <div className="px-5 pt-14 pb-4">
-        <h1 className="text-2xl font-bold text-white tracking-tight">Pocket</h1>
-        <p className="text-white/40 text-sm mt-0.5">Your conversation recordings</p>
+        <h1 className="text-2xl font-bold text-primary tracking-tight">Pocket</h1>
+        <p className="text-tertiary text-sm mt-0.5">Your conversation recordings</p>
       </div>
 
       {/* Search */}
       <div className="px-5 mb-4">
-        <div className="flex items-center gap-2 bg-white/6 rounded-xl px-3 py-2.5 border border-white/8">
-          <Search size={15} className="text-white/30 shrink-0" />
+        <div className="flex items-center gap-2 bg-surface rounded-md px-3 py-2.5 border border-border shadow-sm">
+          <Search size={15} className="text-tertiary shrink-0" />
           <input
-            className="bg-transparent text-white text-sm outline-none flex-1 placeholder:text-white/30"
+            className="bg-transparent text-primary text-sm outline-none flex-1 placeholder:text-muted"
             placeholder="Search recordings…"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
@@ -47,7 +47,7 @@ export default function RecordingsScreen() {
       {/* List */}
       <div className="px-5 flex flex-col gap-3 flex-1">
         {filtered.length === 0 && (
-          <div className="text-center text-white/30 text-sm mt-16">No recordings found</div>
+          <div className="text-center text-tertiary text-sm mt-16">No recordings found</div>
         )}
         {filtered.map((r) => (
           <RecordingCard
@@ -59,7 +59,7 @@ export default function RecordingsScreen() {
       </div>
 
       {/* FAB — Record button */}
-      <button className="fixed bottom-24 right-5 w-14 h-14 rounded-full bg-white text-black flex items-center justify-center shadow-lg active:scale-95 transition-transform">
+      <button className="fixed bottom-24 right-5 w-14 h-14 rounded-full bg-accent text-on-accent flex items-center justify-center shadow-lg active:scale-95 transition-transform">
         <Mic size={22} />
       </button>
 

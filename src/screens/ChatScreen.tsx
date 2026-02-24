@@ -70,11 +70,11 @@ export default function ChatScreen() {
   return (
     <div className="flex flex-col min-h-dvh pb-20">
       {/* Header */}
-      <div className="px-5 pt-14 pb-3 flex items-center justify-between border-b border-white/8">
+      <div className="px-5 pt-14 pb-3 flex items-center justify-between border-b border-border bg-surface">
         <div>
-          <h1 className="text-lg font-bold text-white">AI Chat</h1>
+          <h1 className="text-lg font-bold text-primary">AI Chat</h1>
           {state?.recording && (
-            <p className="text-white/40 text-xs">Context: {state.recording.title}</p>
+            <p className="text-tertiary text-xs">Context: {state.recording.title}</p>
           )}
         </div>
 
@@ -82,20 +82,20 @@ export default function ChatScreen() {
         <div className="relative">
           <button
             onClick={() => setShowModelPicker(!showModelPicker)}
-            className="flex items-center gap-1.5 bg-white/6 border border-white/10 rounded-xl px-3 py-1.5 text-xs text-white/70"
+            className="flex items-center gap-1.5 bg-surface-alt border border-border rounded-md px-3 py-1.5 text-xs text-secondary"
           >
-            <Sparkles size={12} className="text-violet-400" />
+            <Sparkles size={12} className="text-accent" />
             {model}
             <ChevronDown size={12} />
           </button>
           {showModelPicker && (
-            <div className="absolute right-0 top-full mt-1 bg-[#1e1e1e] border border-white/10 rounded-xl overflow-hidden z-10 min-w-[160px]">
+            <div className="absolute right-0 top-full mt-1 bg-surface border border-border rounded-md overflow-hidden z-10 min-w-[160px] shadow-lg">
               {MODELS.map((m) => (
                 <button
                   key={m}
                   onClick={() => { setModel(m); setShowModelPicker(false) }}
-                  className={`w-full text-left px-4 py-2.5 text-xs hover:bg-white/8 transition-colors ${
-                    m === model ? 'text-violet-400' : 'text-white/70'
+                  className={`w-full text-left px-4 py-2.5 text-xs hover:bg-surface-alt transition-colors ${
+                    m === model ? 'text-accent font-medium' : 'text-secondary'
                   }`}
                 >
                   {m}
@@ -114,10 +114,10 @@ export default function ChatScreen() {
             className={`flex ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}
           >
             <div
-              className={`max-w-[80%] rounded-2xl px-4 py-3 text-sm leading-relaxed ${
+              className={`max-w-[80%] rounded-lg px-4 py-3 text-sm leading-relaxed ${
                 m.role === 'user'
-                  ? 'bg-white text-black rounded-br-sm'
-                  : 'bg-white/8 text-white/90 rounded-bl-sm'
+                  ? 'bg-accent text-on-accent rounded-br-sm'
+                  : 'bg-surface-alt text-primary rounded-bl-sm border border-border'
               }`}
             >
               {m.text}
@@ -128,10 +128,10 @@ export default function ChatScreen() {
       </div>
 
       {/* Input */}
-      <div className="fixed bottom-16 left-1/2 -translate-x-1/2 w-full max-w-[430px] px-4 pb-3 bg-[#0a0a0a]">
-        <div className="flex items-end gap-2 bg-white/6 border border-white/10 rounded-2xl px-3 py-2">
+      <div className="fixed bottom-16 left-1/2 -translate-x-1/2 w-full max-w-[430px] px-4 pb-3 bg-bg">
+        <div className="flex items-end gap-2 bg-surface border border-border rounded-lg px-3 py-2 shadow-sm">
           <textarea
-            className="flex-1 bg-transparent text-white text-sm outline-none resize-none placeholder:text-white/30 max-h-28 leading-relaxed"
+            className="flex-1 bg-transparent text-primary text-sm outline-none resize-none placeholder:text-muted max-h-28 leading-relaxed"
             placeholder="Ask about your recordings…"
             rows={1}
             value={input}
@@ -146,7 +146,7 @@ export default function ChatScreen() {
           <button
             onClick={send}
             disabled={!input.trim()}
-            className="w-8 h-8 rounded-xl bg-white text-black flex items-center justify-center shrink-0 disabled:opacity-30 transition-opacity"
+            className="w-8 h-8 rounded-sm bg-accent text-on-accent flex items-center justify-center shrink-0 disabled:opacity-30 transition-opacity"
           >
             <Send size={14} />
           </button>
