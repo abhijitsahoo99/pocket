@@ -1,0 +1,29 @@
+# Pocket App — Cursor AI Rules
+
+This is a web-first AI conversation recorder app (like Pocket AI but software-only).
+Read CLAUDE.md for full project context before making any changes.
+
+## Stack
+- React (Vite) web app → React Native later
+- Sarvam AI for Indian language transcription
+- Node.js/Python backend (TBD)
+- User-selectable LLM for summarisation (OpenAI, Claude, etc.)
+
+## Code Style
+- TypeScript preferred
+- Component-based, keep components small and focused
+- No over-engineering — build for current requirements only
+- Mobile-first CSS even for web (will become React Native)
+
+## Key Features to Build (in order)
+1. Recordings list screen with bottom drawer (summarise / ask AI / share / delete)
+2. AI chat screen (ask questions across all recordings)
+3. Onboarding flow (voice registration to identify owner)
+4. Audio recording + Sarvam AI transcription
+5. Speaker diarization with rename capability
+6. Model selection in settings
+
+## Important
+- Multi-language support: Hindi, English, regional Indian languages
+- Speaker diarization is critical — label as User-1, User-2 etc., allow renaming
+- Keep UI clean and simple — the recordings list is the core screen
