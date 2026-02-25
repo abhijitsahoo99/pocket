@@ -128,7 +128,7 @@ export default function ChatScreen() {
       </div>
 
       {/* Input */}
-      <div className="fixed bottom-16 left-1/2 -translate-x-1/2 w-full max-w-[430px] px-4 pb-3 bg-bg">
+      <div className="fixed bottom-16 left-0 right-0 px-4 pb-3 bg-bg">
         <div className="flex items-end gap-2 bg-surface border border-border rounded-lg px-3 py-2 shadow-sm">
           <textarea
             className="flex-1 bg-transparent text-primary text-sm outline-none resize-none placeholder:text-muted max-h-28 leading-relaxed"

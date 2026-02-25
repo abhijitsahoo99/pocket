@@ -3,7 +3,7 @@ import { Mic, MessageSquare, Settings } from 'lucide-react'
 
 export default function BottomNav() {
   return (
-    <nav className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] bg-surface border-t border-border flex items-center justify-around px-2 pb-safe">
+    <nav className="fixed bottom-0 left-0 right-0 bg-surface border-t border-border flex items-center justify-around px-2 pb-safe">
       <NavLink
         to="/"
         end

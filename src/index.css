@@ -1,6 +1,11 @@
 @import "tailwindcss";
 @import "./styles/design-tokens.css";
 
+/* Force light mode regardless of OS preference */
+html {
+  color-scheme: light;
+}
+
 * {
   -webkit-tap-highlight-color: transparent;
   box-sizing: border-box;
@@ -11,8 +16,6 @@ body {
   font-family: var(--font-sans);
   background: var(--color-bg);
   color: var(--color-primary);
-  max-width: 430px;
-  margin: 0 auto;
   min-height: 100dvh;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
